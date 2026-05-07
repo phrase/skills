@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "phrase-skills",
+  "description": "Phrase agent skills",
+  "owner": {
+    "name": "Phrase",
+    "email": "support@phrase.com"
+  },
+  "plugins": [
+    {
+      "name": "phrase-skills",
+      "description": "Phrase agent skills",
+      "author": {
+        "name": "Phrase"
+      },
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

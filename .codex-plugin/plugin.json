@@ -1,0 +1,16 @@
+{
+  "name": "phrase-skills",
+  "version": "1.0.0",
+  "description": "Phrase-specific agent skills",
+  "author": {
+    "name": "Phrase",
+    "email": "support@phrase.com"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Phrase Skills",
+    "shortDescription": "Phrase-specific agent skills",
+    "developerName": "Phrase",
+    "category": "Productivity"
+  }
+}
