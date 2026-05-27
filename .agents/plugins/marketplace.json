@@ -1,5 +1,6 @@
 {
   "name": "phrase-skills",
+  "url": "https://github.com/phrase/skills",
   "interface": {
     "displayName": "Phrase Skills"
   },

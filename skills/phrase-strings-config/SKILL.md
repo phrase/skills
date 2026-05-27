@@ -3,7 +3,7 @@ name: phrase-strings-config
 description: Generate a .phrase.yml config file for the phrase-cli and Strings Repo Sync. Detects the project's i18n format and locale file paths and writes a working push/pull config. TRIGGER when the user wants to create, extend, or troubleshoot a .phrase.yml config, or has questions about push/pull behavior, CLI flags, locale file setup, or Repo Sync configuration. DO NOT TRIGGER when the user wants to run push/pull and isn't asking about the config itself.
 ---
 
-# phrase-config
+# phrase-strings-config
 
 Generates `.phrase.yml` for any project that uses the Phrase Strings CLI or Strings Repo Sync. The CLI reads this file from the project root to drive `phrase push` and `phrase pull`; Repo Sync uses the same file to sync locale files between a git repository and Phrase.
 

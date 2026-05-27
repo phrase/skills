@@ -62,7 +62,7 @@ push:
 | `tag_only_affected_keys` | Only apply `tags` to keys whose translations actually changed. | `tag_only_affected_keys: true` |
 | `translation_key_prefix` | Add a prefix to every key from this upload. The placeholder `<locale_code>` works here too. | `translation_key_prefix: "web."` |
 | `locale_mapping` | For CSV/XLSX uploads: which column holds which locale. | <pre>locale_mapping:<br>  en: 2<br>  de: 3</pre> |
-| `format_options` | Format-specific settings — see [format-options.md](./format-options.md). | <pre>format_options:<br>  enable_pluralization: true</pre> |
+| `format_options` | Format-specific settings. | <pre>format_options:<br>  enable_pluralization: true</pre> |
 
 ### Push-only top-level setting (under `phrase.push`, not under `sources:`)
 
@@ -105,7 +105,7 @@ pull:
 | `exclude_empty_zero_forms` | For plurals, drop the "zero" form when it's empty. | `exclude_empty_zero_forms: true` |
 | `include_translated_keys` | Combined with `include_empty_translations: true`, lets you flip to download only the *untranslated* keys. | `include_translated_keys: false` |
 | `keep_notranslate_tags` | Keep `[NOTRANSLATE]` markers in the output. | `keep_notranslate_tags: true` |
-| `format_options` | Format-specific download settings — see [format-options.md](./format-options.md). | <pre>format_options:<br>  enclose_in_cdata: true</pre> |
+| `format_options` | Format-specific download settings. | <pre>format_options:<br>  enclose_in_cdata: true</pre> |
 | `encoding` | Force a file encoding. Allowed values: `UTF-8`, `UTF-16`, `ISO-8859-1`. | `encoding: UTF-8` |
 | `include_unverified_translations` | Set `false` to skip unverified translations. | `include_unverified_translations: false` |
 | `use_last_reviewed_version` | Download the last reviewed version of each translation (review workflow only). | `use_last_reviewed_version: true` |

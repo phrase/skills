@@ -1,6 +1,8 @@
 {
   "name": "phrase-skills",
+  "version": "1.0.0",
   "description": "Phrase-specific agent skills",
+  "url": "https://github.com/phrase/skills",
   "author": {
     "name": "Phrase"
   }

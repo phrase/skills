@@ -2,6 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "phrase-skills",
   "description": "Phrase agent skills",
+  "url": "https://github.com/phrase/skills",
   "owner": {
     "name": "Phrase",
     "email": "support@phrase.com"

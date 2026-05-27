@@ -6,6 +6,7 @@
     "name": "Phrase",
     "email": "support@phrase.com"
   },
+  "url": "https://github.com/phrase/skills",
   "skills": "./skills/",
   "interface": {
     "displayName": "Phrase Skills",
