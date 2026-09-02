@@ -86,8 +86,9 @@ extraction flattens tables into gibberish like `[TABLE] Date | Title | … |`.
    Markdown yourself with vision (a converter can't OCR them), rebuilding tables as real
    Markdown tables and reading diagram logic into text — in the source language.
 2. **Gate the conversion.** Run `scripts/check_markdown.py <converted.md>`. On a **FAIL**
-   (literal `[TABLE]` markers, a flattened table), re-convert or fix the tables by hand,
-   then re-check. Do not proceed on a FAIL.
+   (literal `[TABLE]` markers, a flattened table, raw HTML table markup, or an effectively
+   empty file), re-convert or fix the tables by hand, then re-check. Do not proceed on a
+   FAIL.
 3. Assemble one working Markdown document and note whether it has a **change log**.
 
 See `references/ingest-to-markdown.md`.

@@ -10,8 +10,8 @@ Checks:
   * FAIL  literal table markers: [TABLE], [/TABLE], [TABLE], etc.
   * FAIL  flattened table: a single line with many ' | ' separators that is NOT part
           of a real Markdown table (no header separator row of dashes).
-  * FAIL  malformed table: a block of pipe-rows with no '| --- |' separator after the
-          header.
+  * WARN  malformed table: a table header row with no '| --- |' separator on the next
+          line (heuristic — advisory, not a hard fail).
   * FAIL  raw HTML table markup (<table>, <tr>, <td>, <th>, <colgroup>, <col ...>, etc.)
           — a table left as HTML instead of converted to a Markdown table.
   * WARN  image references (<img ...> or ![](...)) — an LLM called via API can't see
