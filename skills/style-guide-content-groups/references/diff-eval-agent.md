@@ -27,8 +27,9 @@ Task:
 2. For each, decide whether the OPTIMIZED file still enforces it — explicitly, folded
    into a broader concise Rule, or legitimately transformed. These transformations are
    EXPECTED and are NOT losses:
-   - Terminology (specific terms to use/avoid, examples, substitutions) removed from the
-     Rules and moved to Terminology.md — check it landed there.
+   - Deterministic terminology (a fixed glossary / always-replace terms) moved out to
+     Terminology.md — check it landed there. Conditional/contextual term guidance and
+     illustrative examples correctly stay inline in the Rules; do not treat those as losses.
    - Orthography/punctuation Rules consolidated into a single reference to the language's
      primary convention (RAE / Chicago / Duden / …) — but only if the requirement is
      genuinely part of that convention (see step 4).
@@ -45,11 +46,15 @@ Task:
 4. Flag anything the OPTIMIZED file states that the source does not support. A reference
    to the primary language convention is allowed — but verify each Rule folded under it
    is genuinely covered by that convention; flag any that are house style the convention
-   does not dictate (over-consolidation), and any specific term left in the Rules that
-   belongs in Terminology.md. Count each over-consolidation as a High-impact omission — it
-   silently drops a real requirement. If the file references a language convention, confirm
-   the reference states precedence explicitly (the guide's specific Rules override the
-   convention); flag it (Medium) if that precedence line is missing.
+   does not dictate (over-consolidation), and any deterministic glossary term left in the
+   Rules that belongs in the Term Base (conditional/contextual terms may stay inline).
+   Count each over-consolidation as a High-impact omission — it silently drops a real
+   requirement. If the file references a language convention, confirm the reference states
+   precedence explicitly (the guide's specific Rules override the convention); flag it
+   (Medium) if that precedence line is missing. Flag, as **High**, any Rule that names
+   `Terminology.md` (or any companion file this skill produced) as where to find a
+   term/value — the Rules-applying LLM cannot open it at runtime, so it is a
+   self-inflicted broken reference, not a legitimate transformation.
 5. Compute a CONFIDENCE SCORE (0–100) for how faithfully the OPTIMIZED set preserves the
    source. Start at 100 and subtract for each MISSING/WEAKENED item (step 3) and each
    over-consolidation (step 4):  High −15, Medium −5, Low −1.  Floor the score at 0.

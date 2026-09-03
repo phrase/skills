@@ -35,8 +35,8 @@ stated inline, or drop it (see *Strip external references*).
 
 1. **Consolidate under the primary language convention** — for any file over ~30 Rules.
    See below.
-2. **Move terminology to a separate `Terminology.md`** — extract it, don't silently drop
-   it. See below.
+2. **Handle terminology** — extract deterministic glossaries to `Terminology.md`; keep
+   conditional/contextual term guidance inline; never point a Rule at the file. See below.
 3. **Strip external references** so every Rule is self-sufficient. See below.
 4. **Fold overlaps.** Merge Rules that say the same thing (a rule restated in a cheat
    sheet, a summary, or across sections) into one. Merge closely related sub-points into
@@ -106,26 +106,52 @@ the precedence sentence in both:
 Replace `<AUTHORITY>` and `<language>` with the guide's own. This convention reference is
 the **one allowed external reference** (see *Strip external references* below).
 
-### Move terminology to a separate `Terminology.md`
+### Terminology: keep conditional guidance inline, extract only deterministic glossaries
 
-Terminology does not belong in the Rules — the platform's Term Bases handle it. But don't
-silently delete it: **extract it into a single `Terminology.md`** delivered alongside the
-optimized set.
+Terminology splits into two kinds that go to two different places:
 
-- **Omit from the Style Guide** any Rule whose content is a **specific term to use or
-  avoid** — concrete examples, substitutions, approved/forbidden word lists, product-name
-  catalogs, "say X not Y" pairs, flagged terms.
-- **Keep in the Style Guide** any Rule that states a **general principle** rather than a
-  specific term. Example to keep: *"For non-binary individuals, use the pronouns
-  'they/them.'"* — a general rule, not a term-list entry.
-- **Collect** every omitted term into `Terminology.md` so nothing is lost, noting the
-  Content Group it came from where that matters. Start the file with a short preface:
+The deciding question is simple: **does the translation vary with context, or is it
+always the same?**
 
-  > **Terminology.** These are terms to use or avoid, pulled out of the Style Guide.
-  > Terminology should be handled separately, in Term Bases — not as Style Guide Rules.
+- **Strict (deterministic) terms** — the source term is **always rendered the same way**,
+  no matter the context (e.g. "always translate 'cart' as 'carrito'"; a fixed glossary, an
+  approved/forbidden list, a product-name catalog, a set of "apply these fixed
+  translations" mappings). These belong in the platform's **Term Base**: **remove them
+  from the Rules entirely** and extract them into a single `Terminology.md` delivered
+  alongside the optimized set. The Rule keeps only the *principle*, if any ("follow the
+  approved termbase").
+- **Conditional terms** — the correct translation **depends on the segment's meaning or
+  situation**, so the same source term is rendered differently in different contexts, or
+  the choice depends on a condition/judgment. A Term Base can't express that, so this
+  stays **inline in the Rule**, with the terms it needs. Examples: "cart" → "cesta" when
+  it means a shopping basket but a different word when it means a race-car cart;
+  "translate the workout name *when* an established equivalent exists, otherwise use
+  judgment." Illustrative examples that show a pattern (e.g. "April 30K Challenge" →
+  "Desafío de 30 km de abril") stay too.
 
 Keep the *rule about* terminology (e.g. "follow the approved termbase", precedence
 between terminology and fluency) in the Style Guide — that is a principle, not a term.
+
+**Never point a Rule at `Terminology.md` (or any companion file this run produces) by
+name.** `Terminology.md` is delivered for the user to import into the Term Base — a
+separate subsystem the Rules-applying LLM cannot open at runtime. A Rule that says "see
+`Terminology.md` for the list" is exactly as broken as an external link (see *Strip
+external references*). Instead:
+
+- If a Rule needs specific terms to be checkable, **inline them** — a few words rarely
+  strains the concise-Rule budget.
+
+  > Wrong: *"Home/Away/Third are always translated (see `Terminology.md`)."*
+  > Right: *"Home/Away/Third are always translated as Local/Visitante/Alternativo."*
+- If the term data is a genuinely large deterministic table (a sizing chart, a multi-row
+  capitalization table) that can't go inline, deliver it as reference data for Term Base
+  import and phrase the Rule as a self-sufficient principle ("map sizes using the standard
+  size/age-range conversion") — **without naming the file**.
+
+Start `Terminology.md` (when you produce one) with a short preface:
+
+> **Terminology.** These are deterministic terms to use or avoid, pulled out for import
+> into the platform's Term Base — not Style Guide Rules.
 
 ### Strip external references
 
@@ -139,6 +165,11 @@ during optimization:
   *"check online"*, *"confirm with the client"*, *"search for the latest guidance"*.
 - Remove links to external sources and web pages. Example to omit: *"Use the official
   Spanish translation published at apple.com/la."*
+- Remove a Rule's reference to **this skill's own delivered files** — `Terminology.md`,
+  the verbatim split, or any other companion artifact. These exist for the human / Term
+  Base import, not for the Rules-applying LLM to open at runtime; naming one inside a Rule
+  is the same defect as an external link. Inline what the Rule needs instead (see
+  *Terminology* above).
 - Remove **image and media references** — the model can't see them. Examples to omit: an
   `<img src="/media/image2c.png" …>` tag, a Markdown image like `![logo](media/image1.png)`,
   or a Rule that says *"match the example shown in the screenshot above."*
@@ -170,10 +201,14 @@ and the user gets the final say.
 
 1. Confirm each Content Group's optimized file is **≤ 50 Rules** (and that any file you
    took through the consolidation pass is genuinely smaller, not just relabeled).
-2. Run the **omission check** (`references/diff-eval-agent.md`) against the verbatim
+2. Run `scripts/check_self_references.py <optimized files>` and fix every hit: no Rule may
+   name `Terminology.md`, the verbatim split, or any other companion file this run
+   produced — inline what the Rule needs instead. This is deterministic, so do it before
+   the omission check rather than spending an LLM pass on what a script catches for free.
+3. Run the **omission check** (`references/diff-eval-agent.md`) against the verbatim
    split, present any important omissions, and ask the user to restore or proceed. The
    check also confirms convention-consolidated Rules really are covered by the named
    convention, and that everything routed to `Terminology.md` is genuinely term-level.
-3. Deliver `Terminology.md` alongside the optimized set. Deliver the verbatim split
+4. Deliver `Terminology.md` alongside the optimized set. Deliver the verbatim split
    **only when the user asks for it** — it is always built and kept as the ground truth
    for the omission check, but it ships only on request.

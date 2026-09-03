@@ -80,6 +80,15 @@ Everything downstream assumes clean Markdown. **If the upload is not already wel
 Markdown, convert it first — never split a raw PDF/DOCX/HTML dump directly.** A bad
 extraction flattens tables into gibberish like `[TABLE] Date | Title | … |`.
 
+**Prerequisite — check for a converter first (non-Markdown uploads only).**
+`.docx/.pdf/.pptx/.xlsx/.html/.rtf` need `markitdown` (recommended) or `pandoc`; `.md`/`.txt`
+and images (handled by vision) need neither. Before converting, check whether one is
+available — `python3 -c "import markitdown"` or `command -v pandoc`. **If neither is
+present, stop and give the user the exact install command for their OS and offer to run
+it** — don't proceed into a failing conversion:
+- Any OS (recommended): `pip install -U markitdown` (needs Python 3.10+; `-U` avoids a stale build).
+- pandoc — macOS: `brew install pandoc` · Debian/Ubuntu: `sudo apt install pandoc` · Windows: `winget install --id JohnMacFarlane.Pandoc` (or the installer at pandoc.org).
+
 1. **Convert.** Run `scripts/to_markdown.py <upload>` for `.docx/.pdf/.html/.pptx/.xlsx/.rtf`
    (markitdown, then pandoc; preserves tables **and the source language**). `.md`/`.txt`
    pass through. For **images, screenshots, scans, and diagrams**, transcribe them to
@@ -170,10 +179,11 @@ word-for-word Rules.
 
 > I'll do the Combinable split (a Universal Style Guide plus one per Content Group), then
 > optimize each toward what the platform will actually extract when it turns your Style
-> Guide into Rules. I pull terminology out into a separate **Terminology.md** (your Term
-> Bases handle terms, not Rules), fold repeated or overlapping Rules together, state each
-> Rule concisely, and make every Rule self-sufficient by removing external pointers
-> ("ask your PM", "check online", links). When a file runs long (over ~30 Rules — usually
+> Guide into Rules. I move deterministic terminology (fixed glossaries) into a separate
+> **Terminology.md** for your Term Base while keeping context-dependent term guidance
+> inline, fold repeated or overlapping Rules together, state each Rule concisely, and make
+> every Rule self-sufficient by removing external pointers ("ask your PM", "check online",
+> links, and references to companion files). When a file runs long (over ~30 Rules — usually
 > Universal), I consolidate the Rules that merely restate your language's standard
 > convention (e.g. RAE for Spanish, Chicago for English, Duden for German — whatever
 > authority fits the guide's language) into a single reference, while keeping your
@@ -213,6 +223,10 @@ language throughout. Then, by option:
   prove the split is lossless and disjoint (shared matter excluded — see `raw-split.md`).
 - **All options:** run `scripts/check_markdown.py` on every produced file and fix any
   **FAIL** — no flattened/`[TABLE]`/malformed tables may reach the user.
+- **Option 3 — self-reference check (required).** Run `scripts/check_self_references.py`
+  on every optimized file and fix any **FAIL** — no Rule may point at `Terminology.md` or
+  any other companion file (inline what it needs). Run this **before** the omission check;
+  it's deterministic and catches what an LLM pass shouldn't have to.
 - **Option 3 — omission check (required).** Compare each optimized file against its
   verbatim source and list every important requirement that was dropped or weakened,
   following `references/diff-eval-agent.md` (prefer the read-only
@@ -245,6 +259,8 @@ alongside the optimized set; deliver the verbatim split **only when the user ask
 - `scripts/to_markdown.py` — converts documents to Markdown, preserving tables/language.
 - `scripts/check_markdown.py` — flags conversion gibberish; run on the upload and every
   produced file.
+- `scripts/check_self_references.py` — Option 3 only: FAILs if an optimized Rule points at
+  `Terminology.md` or another companion file (an unreachable runtime reference).
 - `scripts/verify_split.py` — checks the split is lossless and disjoint.
 - `assets/estimation-extraction-prompt.md` — inclusive platform extractor, for counting.
 - `assets/extraction-prompt.md` — the concise target Option 3 aims to resemble.
