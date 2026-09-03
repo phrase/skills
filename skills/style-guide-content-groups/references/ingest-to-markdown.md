@@ -6,6 +6,19 @@ tables collapse into gibberish — e.g. a revision-history table becomes one run
 gibberish is copied into every output file. So the upload is **always** converted to
 clean Markdown and gated before anything else happens.
 
+## 0. Prerequisite — a converter must be installed (non-Markdown uploads)
+
+`.docx/.pdf/.pptx/.xlsx/.html/.rtf` uploads need `markitdown` (recommended) or `pandoc`.
+`.md`/`.txt` and images (handled by vision) need neither. **Before converting, check that
+one is present** — `python3 -c "import markitdown"` or `command -v pandoc`. If neither is,
+**tell the user the exact install command for their OS and offer to run it** rather than
+proceeding into a failing conversion:
+
+- Recommended, any OS: `pip install -U markitdown` (needs Python 3.10+; the `-U` avoids a
+  stale build — an older `markitdown` can import without the converter class and fail).
+- pandoc — macOS: `brew install pandoc` · Debian/Ubuntu: `sudo apt install pandoc` ·
+  Windows: `winget install --id JohnMacFarlane.Pandoc` (or the installer at pandoc.org).
+
 ## 1. Convert
 
 Run the bundled converter:
@@ -16,8 +29,8 @@ python scripts/to_markdown.py <upload> -o working.md
 
 It tries, in order, and targets GitHub-Flavored Markdown so tables stay real tables:
 
-1. **markitdown** — `pip install markitdown`. Best at `.docx/.pdf/.pptx/.xlsx/.html`
-   tables. Recommended.
+1. **markitdown** — `pip install -U markitdown` (Python 3.10+). Best at
+   `.docx/.pdf/.pptx/.xlsx/.html` tables. Recommended.
 2. **pandoc** — system binary (`https://pandoc.org/installing.html`). Good for
    `.docx/.html/.rtf`.
 
