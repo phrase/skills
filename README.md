@@ -46,6 +46,7 @@ npx skills add phrase/skills
 
 | Skill | Description |
 |-------|-------------|
+| [phrase-rule-extractor](skills/phrase-rule-extractor/SKILL.md) | Derive translation Rules that also work as Phrase AI checks from your source files and reference translations. Writes the Rules and a TBX file for your Term Base, then tests and improves the Rules. |
 | [phrase-strings-config](skills/phrase-strings-config/SKILL.md) | Generate a `.phrase.yml` config file for the Phrase CLI and Strings Repo Sync. Detects i18n format and locale file paths. |
 | [style-guide-content-groups](skills/style-guide-content-groups/SKILL.md) | Split one style guide into per-content-group style guides (a shared Universal guide plus one per group), with an optional optimized preview of the rules a platform will extract. Detects hidden content groups, consolidates under language conventions, and separates terminology. |
 

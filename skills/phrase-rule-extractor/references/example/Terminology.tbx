@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<martif type="TBX" xml:lang="en">
+  <martifHeader>
+    <fileDesc>
+      <sourceDesc>
+        <p>Terms derived from a reference translation for Term Base import.</p>
+      </sourceDesc>
+    </fileDesc>
+  </martifHeader>
+  <text>
+    <body>
+      <termEntry id="c1">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>Adidas</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>adidas</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>The brand is written in lowercase.</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c2">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>boot</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Fußballschuh</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>Do not put Schuh in avoid: it is part of the correct term Fußballschuh. boot -&gt; Fußballschuh</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c3">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>boot pack</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Schuhkollektion</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>boot pack -&gt; Schuhkollektion</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c4">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>cleat</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Fußballschuh</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>cleat -&gt; Fußballschuh</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c5">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>colorway</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Farbvariante</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>colorway -&gt; Farbvariante</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c6">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>pack</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Kollektion</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>Pack -&gt; Kollektion, also in compounds.</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c7">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>pitch</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Rasen</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>pitch -&gt; Rasen</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c8">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>silhouette</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Modellreihe</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>silhouette -&gt; Modellreihe</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c9">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>team</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>Team</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>The client writes Team, not Mannschaft.</note>
+          </tig>
+        </langSet>
+      </termEntry>
+      <termEntry id="c10">
+        <langSet xml:lang="en_us">
+          <tig>
+            <term>World Cup</term>
+            <termNote type="status">Approved</termNote>
+          </tig>
+        </langSet>
+        <langSet xml:lang="de_de">
+          <tig>
+            <term>WM</term>
+            <termNote type="preferred">True</termNote>
+            <termNote type="status">Approved</termNote>
+            <note>World Cup -&gt; WM</note>
+          </tig>
+        </langSet>
+      </termEntry>
+    </body>
+  </text>
+</martif>
