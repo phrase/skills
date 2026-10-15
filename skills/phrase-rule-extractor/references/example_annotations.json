@@ -1,0 +1,291 @@
+{
+ "title": "World Cup 2026 pink boots article",
+ "source_locale": "en-US",
+ "target_locale": "de-DE",
+ "candidate_label": "Blind translation",
+ "reference_label": "Reference",
+ "rules": [
+  {
+   "id": "R1",
+   "category": "Editorial",
+   "text": "Put the names of collections and colors in German quotation marks every time they appear, also when the source writes them without quotation marks, for example \"„Showtime“-Kollektion,\" not \"Showtime-Kollektion.\" Join a German noun that follows the name with a hyphen after the closing mark, as in \"„Breakout“-Kollektion.\""
+  },
+  {
+   "id": "R2",
+   "category": "Editorial",
+   "text": "When the source puts a year before the name of a product collection, write the year in parentheses after the name, for example \"„Tricks“-Kollektion (2014)\" for \"2014 Tricks collection.\" Do not write \"aus dem Jahr 2014\" or \"von 2014\" after the name."
+  },
+  {
+   "id": "R3",
+   "category": "Style",
+   "text": "Do not form a genitive with \"-s\" from a brand name. Use \"von\" and the brand name after the noun, for example \"die legendäre Kollektion von Puma,\" not \"Pumas legendäre Kollektion.\""
+  },
+  {
+   "id": "R4",
+   "category": "Fluency",
+   "text": "Do not use the English loanwords \"Look,\" \"Statement,\" \"Twist,\" and \"Highlight\" in the target, also not when the source has the English word. Use \"Erscheinungsbild,\" \"Aussage,\" \"Note,\" and \"Höhepunkt.\" Keep English words that are part of a product, collection, or color name, for example \"Poison Pink.\""
+  }
+ ],
+ "annotations": [
+  {
+   "type": "rule",
+   "mt": "Showtime-Packs",
+   "ref": "„Showtime“-Kollektion",
+   "note": "The source writes this name without quotation marks. The reference adds them.",
+   "rule": "R1"
+  },
+  {
+   "type": "rule",
+   "mt": "Showtime-Pack",
+   "ref": "„Showtime“-Kollektion",
+   "note": "The source writes this name without quotation marks. The reference adds them.",
+   "rule": "R1"
+  },
+  {
+   "type": "rule",
+   "mt": "Tricks-Pack",
+   "ref": "„Tricks“-Kollektion",
+   "note": "The source writes this name without quotation marks. The reference adds them.",
+   "rule": "R1"
+  },
+  {
+   "type": "rule",
+   "mt": "aus dem Jahr 2014",
+   "ref": "(2014)",
+   "note": "The year goes in parentheses after the collection name.",
+   "rule": "R2"
+  },
+  {
+   "type": "rule",
+   "mt": "von 2014",
+   "ref": "(2014)",
+   "note": "The year goes in parentheses after the collection name.",
+   "rule": "R2"
+  },
+  {
+   "type": "rule",
+   "mt": "Pumas legendärer",
+   "ref": "der legendären",
+   "note": "No genitive -s on a brand name.",
+   "rule": "R3"
+  },
+  {
+   "type": "rule",
+   "ref": "von Puma inspiriert",
+   "note": "No genitive -s on a brand name.",
+   "rule": "R3"
+  },
+  {
+   "type": "rule",
+   "mt": "Twist",
+   "ref": "Note",
+   "note": "English loanword replaced by a German word.",
+   "rule": "R4"
+  },
+  {
+   "type": "rule",
+   "mt": "Statements",
+   "ref": "Aussagen",
+   "note": "English loanword replaced by a German word.",
+   "rule": "R4"
+  },
+  {
+   "type": "rule",
+   "mt": "Look",
+   "ref": "Erscheinungsbild",
+   "note": "English loanword replaced by a German word.",
+   "rule": "R4"
+  },
+  {
+   "type": "rule",
+   "mt": "Highlights",
+   "ref": "Höhepunkte",
+   "note": "English loanword replaced by a German word.",
+   "rule": "R4"
+  },
+  {
+   "type": "termbase",
+   "mt": "Weltmeisterschaft",
+   "ref": "WM",
+   "note": "World Cup -> WM",
+   "source_term": "World Cup",
+   "target_term": "WM",
+   "avoid": [
+    "Weltmeisterschaft"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Schuh-Pack",
+   "ref": "Schuhkollektion",
+   "note": "boot pack -> Schuhkollektion",
+   "source_term": "boot pack",
+   "target_term": "Schuhkollektion",
+   "avoid": [
+    "Schuh-Pack",
+    "Boot-Pack"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Pack",
+   "ref": "Kollektion",
+   "note": "Pack -> Kollektion, also in compounds.",
+   "source_term": "pack",
+   "target_term": "Kollektion",
+   "avoid": [
+    "Pack"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Colorway",
+   "ref": "Farbvariante",
+   "note": "colorway -> Farbvariante",
+   "source_term": "colorway",
+   "target_term": "Farbvariante",
+   "avoid": [
+    "Colorway"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Silhouetten",
+   "ref": "Modellreihen",
+   "note": "silhouette -> Modellreihe",
+   "source_term": "silhouette",
+   "target_term": "Modellreihe",
+   "avoid": [
+    "Silhouette"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Platz",
+   "ref": "Rasen",
+   "note": "pitch -> Rasen",
+   "source_term": "pitch",
+   "target_term": "Rasen",
+   "avoid": [
+    "Platz",
+    "Spielfeld"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Mannschaften",
+   "ref": "Teams",
+   "note": "The client writes Team, not Mannschaft.",
+   "source_term": "team",
+   "target_term": "Team",
+   "avoid": [
+    "Mannschaft"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Adidas",
+   "ref": "adidas",
+   "note": "The brand is written in lowercase.",
+   "source_term": "Adidas",
+   "target_term": "adidas",
+   "avoid": [
+    "Adidas"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Schuhe",
+   "ref": "Fußballschuhe",
+   "note": "Do not put Schuh in avoid: it is part of the correct term Fußballschuh.",
+   "source_term": "boot",
+   "target_term": "Fußballschuh",
+   "avoid": [
+    "Stiefel",
+    "Boot"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Schuhs",
+   "ref": "Fußballschuhs",
+   "note": "boot -> Fußballschuh",
+   "source_term": "boot",
+   "target_term": "Fußballschuh",
+   "avoid": [
+    "Stiefel",
+    "Boot"
+   ]
+  },
+  {
+   "type": "termbase",
+   "mt": "Schuhe trugen",
+   "ref": "Fußballschuhe trugen",
+   "note": "cleat -> Fußballschuh",
+   "source_term": "cleat",
+   "target_term": "Fußballschuh",
+   "avoid": [
+    "Cleat"
+   ]
+  },
+  {
+   "type": "reference_error",
+   "mt": "FIFA-Weltmeisterschaft",
+   "ref": "FIFA WM",
+   "note": "The reference drops the hyphen in the compound \"FIFA-WM\". Do not encode. \"WM\" itself is a termbase item."
+  },
+  {
+   "type": "reference_error",
+   "mt": "beinahe komisch",
+   "ref": "komisch",
+   "note": "The reference drops the hedge \"almost\". Do not encode."
+  },
+  {
+   "type": "reference_error",
+   "ref": "erinnern ,",
+   "note": "The reference has a space before a comma. Do not encode."
+  },
+  {
+   "type": "one_off",
+   "ref": "Die WM 2026: Als die Fußballsc",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  },
+  {
+   "type": "one_off",
+   "ref": "Die FIFA WM 2026, die gemeinsa",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  },
+  {
+   "type": "one_off",
+   "ref": "Vor dem Turnier stellte Puma s",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  },
+  {
+   "type": "one_off",
+   "ref": "Im Mittelpunkt der „Showtime“-",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  },
+  {
+   "type": "one_off",
+   "ref": "Interessanter wird die Geschic",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  },
+  {
+   "type": "one_off",
+   "ref": "Das Ergebnis war nach dem Anpf",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  },
+  {
+   "type": "one_off",
+   "ref": "Für Puma im Besonderen konnte ",
+   "note": "Other differences in this segment are one-off wording choices.",
+   "scope": "segment"
+  }
+ ]
+}
